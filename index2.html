@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreAura- Your Dream Vacation</title>
+    <link rel="stylesheet" href="style2.css">
+    
+</head>
+<body>
+    <nav>   
+        <div class="logo">ExploreAura</div>
+        <ul>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#booking-section">Booking</a></li>
+            <li><a href="#travel-packages" class="nav-link">Packages</a></li>
+            <li><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Search Destinations">
+            <button class="search-btn">Search</button>
+        </div>
+    </nav>
+    <section class="about" id="about">
+        <div class="carousel-container">
+            <div class="carousel animate">
+              <img src="beach2-1852945_640.jpg" alt="Tropical Getaways" />
+              <div class="text">
+                <h3>Tropical Getaways</h3>
+                <p>Discover breathtaking beaches and crystal-clear waters.</p>
+              </div>
+            </div>
+          
+            <div class="carousel animate">
+              <img src="cliff-1822484_640.jpg" alt="Mountain Retreats" />
+              <div class="text">
+                <h3>Mountain Retreats</h3>
+                <p>Experience the serenity of alpine landscapes.</p>
+              </div>
+            </div>
+            <div class="carousel animate">
+              <img src="urban-1852945_640.jpg" alt="Urban Explorations" />
+              <div class="text">
+                <h3>Urban Explorations</h3>
+                <p>Immerse yourself in vibrant city cultures.</p>
+              </div>
+            </div>
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+            <div class="dots-container">
+              <span class="dots" onclick="currentSlide(1)"></span>
+              <span class="dots" onclick="currentSlide(2)"></span>
+              <span class="dots" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+    </section>
+    
+    <section class="booking-section" id="booking-section">
+        <h2>Book Your Dream Vacation</h2>
+        <form class="booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <select id="destination" name="destination" required>
+                <option value="" disabled selected>Choose Destination</option>
+                <option value="tropical">Tropical Paradise</option>
+                <option value="mountain">Mountain Adventure</option>
+                <option value="urban">Urban Explorer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="travelers">Number of Travelers</label>
+              <input type="number" id="travelers" name="travelers" placeholder="Enter number" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="start-date">Start Date</label>
+              <input type="date" id="start-date" name="start-date" required>
+            </div>
+            <div class="form-group">
+              <label for="end-date">End Date</label>
+              <input type="date" id="end-date" name="end-date" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="requirements">Additional Requirements</label>
+            <textarea id="requirements" name="requirements" rows="3" placeholder="Enter any additional requirements"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Book Now</button>
+        </form>
+      </section>
+      
+    <section class="travel-packages" id="travel-packages">
+        <h2>Our Travel Packages</h2>
+        <div class="card-container">
+          <div class="card">
+            <img src="tropical-paradise-escape-stockcake.jpg" alt="Tropical Paradise Escape">
+            <div class="card-content">
+              <h3 style="text-align: center;">Tropical Paradise Escape</h3>
+              <p style="text-align: center;"><strong> sun, sand, and relaxation</strong></p>
+              <p style="text-align: center;">With all-inclusive dining, exciting activities like snorkeling and sunset cruises, rejuvenating spa treatments, and cultural experiences.</p>
+              <button style="display: block; margin: 0 auto;">Explore All</button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="MountainWildernessAdventure.jpg" alt="Mountain Wilderness Adventure">
+            <div class="card-content">
+              <h3 style="text-align: center;">Mountain Wilderness Adventure</h3>
+              <p style="text-align: center;"><strong>hiking and exploration</strong></p>
+              <p style="text-align: center;">Discover the beauty of the mountains with an adventure filled with hiking, stunning landscapes, and unforgettable outdoor experiences.</p>
+              <button style="display: block; margin: 0 auto;">Explore All</button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="urbanexplore.jpg" alt="Urban Explorer's Dream">
+            <div class="card-content">
+              <h3 style="text-align: center;">Urban Explorer's Dream</h3>
+              <p style="text-align: center;"><strong>city culture and excitement</strong></p>
+              <p style="text-align: center;">Dive into the heart of city culture with an exciting mix of sightseeing, vibrant nightlife, local cuisine, and unique experiences in the urban landscape.</p>
+              <button style="display: block; margin: 0 auto;">Explore All</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>ExploreAura</h3>
+            <p>Your gateway to unforgettable travel experiences.</p>
+          </div>
+          <div class="footer-section">
+            <h3>CONTACT US</h3>
+            <p>Email: <a href="mailto:info@exploreaura.com">info@exploreaura.com</a></p>
+            <p>Phone: <a href="tel:+91 9999999999">+91 9999999999</a></p>
+          </div>
+        </div>
+      </footer>
+</body>
+<script>
+document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+let slideIndex = 0;
+showSlides();
+
+function nextSlide() {
+  slideIndex++;
+  showSlides();
+  timer = _timer;
+}
+
+function prevSlide() {
+  slideIndex--;
+  showSlides();
+  timer = _timer;
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+  timer = _timer;
+}
+
+function showSlides() {
+  let slides = document.querySelectorAll(".carousel");
+  let dots = document.querySelectorAll(".dots");
+
+  if (slideIndex > slides.length - 1) slideIndex = 0;
+  if (slideIndex < 0) slideIndex = slides.length - 1;
+
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
+
+  slides[slideIndex].style.display = "block";
+
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
+  });
+
+  dots[slideIndex].classList.add("active");
+}
+
+let timer = 7;
+const _timer = timer;
+
+setInterval(() => {
+  timer--;
+  if (timer < 1) {
+    nextSlide();
+    timer = _timer;
+  }
+}, 1000);
+
+
+</script>
+</html>
