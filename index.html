@@ -221,6 +221,32 @@ setInterval(() => {
   }
 }, 1000);
 
+setInterval(() => {
+  timer--;
+  if (timer < 1) {
+    nextSlide();
+    timer = _timer;
+  }
+}, 1000);
+document.addEventListener('DOMContentLoaded', () => {
+    const redirectToPage = (url) => {
+        window.location.href = url;
+    };
 
+    const tropicalParadiseBtn = document.getElementById('TropicalParadiseEscapebtn');
+    tropicalParadiseBtn.addEventListener('click', () => {
+        redirectToPage('TropicalParadiseEscape.html');
+    });
+
+    const mountainWildernessBtn = document.getElementById('MountainWildernessAdventurebtn');
+    mountainWildernessBtn.addEventListener('click', () => {
+        redirectToPage('MountainWildernessAdventure.html');
+    });
+
+    const urbanExploreBtn = document.getElementById('urbanexplorebtn');
+    urbanExploreBtn.addEventListener('click', () => {
+        redirectToPage('UrbanExplorerDream.html');
+    });
+});
 </script>
 </html>
